@@ -73,7 +73,7 @@ public class UserController {
 		SimpleMailMessage mesg = new SimpleMailMessage();
 		mesg.setTo(destEmail);
 		mesg.setSubject("FoodApp Account Created");
-		mesg.setText(username +" you have been successfully Registered !!!!! and Your password is "+" :"+password);
+		mesg.setText("Hi "+username +" you have been successfully Registered on Food Order Portal !!!!! \n Your password is "+" :"+password+"\nDiscover the best food & drinks on our portal\nHave a Good Day!!!!!");
 		sender.send(mesg);
 		return new ResponseEntity<>(userService.saveUserDetails(user), HttpStatus.CREATED);
 	}
@@ -143,7 +143,7 @@ public class UserController {
 					SimpleMailMessage mesg = new SimpleMailMessage();
 					mesg.setTo(destEmail);
 					mesg.setSubject("FoodApp Forget password");
-					mesg.setText(username +" Your password is "+": "+password );
+					mesg.setText("Hi "+username +" Your password is "+": "+password+"\nPlease Try again For Login!!!!!!!!!!" );
 					sender.send(mesg);
 				
 					return new ResponseEntity<>(validateuser,HttpStatus.OK);
